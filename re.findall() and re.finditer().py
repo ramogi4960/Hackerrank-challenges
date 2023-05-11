@@ -6,6 +6,7 @@
 # vowels - AEIOUaeiou
 # I waaant you too beet
 # abaaaboopii
+# there is no match here
 import re
 p, matches = r"[QWRTYPSDFGHJKLZXCVBNMqwrtypsdfghjklzxcvbnm][AEIOUaeiou]{2,}", []
 word = input().split()
@@ -21,6 +22,14 @@ else:
             matches.append(re.findall(p, r))
             matches[-1].pop()
 
-for item in matches:
-    for i in item:
-        print(i[1:])
+
+# for i in matches:
+#     if len(i) == 0:
+#         matches.remove(i)
+
+print(matches)
+
+# if len(matches) <= 1:
+#     print("-1")
+# else:
+#     print(i for i in matches)
