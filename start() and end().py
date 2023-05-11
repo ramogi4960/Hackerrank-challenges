@@ -11,4 +11,8 @@ for i in range(len(s)):
     else:
         list1.append((i, i+len(k)-1))
 
-print(*list1, sep="\n")
+if len(list1) == 0:
+    t = (-1, -1)
+    print(t)
+else:
+    print(*list1, sep="\n")
