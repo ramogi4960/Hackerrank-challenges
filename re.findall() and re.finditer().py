@@ -26,4 +26,3 @@ if matches:
         print(i[1:])
 else:
     print(-1)
-    
