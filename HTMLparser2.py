@@ -4,15 +4,29 @@
 # we can join lines of the html code with \n for items that fulfill defined conditions for a multi-line
 # if not, we join the lines with ""
 
+# """
+# 4
+# <!--This is a
+# Multiline comment
+# <div> my data is commented </div>
+# end of comment-->
+# """
+# """
+# 3
+# <!--Kam se kam 6
+# test case to bante hain
+# re bhai-->
+# """
+
 from html.parser import HTMLParser
 
 
 class Remy(HTMLParser):
     def handle_comment(self, data):
         if "\n" in data:
-            print(f">>> Multi-line comment\n{data}")
+            print(f">>> Multi-line Comment\n{data}")
         else:
-            print(f">>> Single-line comment\n{data}")
+            print(f">>> Single-line Comment\n{data}")
 
     def handle_data(self, data):
         print(f">>> Data\n{data}")
@@ -20,10 +34,10 @@ class Remy(HTMLParser):
 
 html_code = [input() for _ in range(int(input()))]
 new_html_code = []
-for i in range(len(html_code)): # section to handle multi-line comments in a different way
+for i in range(len(html_code)):  # section to handle multi-line comments in a different way
     if html_code[i][:4] == "<!--" and html_code[i][-3:] != "-->":
         feeder = [html_code[i]]
-        for item in html_code[i+1:]:
+        for item in html_code[i + 1:]:
             feeder.append(item)
             if item[-3:] == "-->":
                 break

@@ -1,17 +1,17 @@
-"""
-4253625879615786
-4424424424442444
-5122-2368-7954-3214
-"""
-"""
-6
-4123456789123456
-5123-4567-8912-3456
-61234-567-8912-3456
-4123356789123456
-5133-3367-8912-3456
-5123 - 3567 - 8912 - 3456
-"""
+a = set(""">>> Multi-line Comment
+[if IE 9]>IE9-specific content
+<![endif]
+>>> Data
+ Welcome to HackerRank
+>>> Single-line Comment
+[if IE 9]>IE9-specific content<![endif]""")
 
-r = "444444"
-print(all("4"*2 == r[i:i+2] for i in range(len(r[:-1]))))
+b = set(""">>> Multi-line comment
+[if IE 9]>IE9-specific content
+<![endif]
+>>> Data
+ Welcome to HackerRank
+>>> Single-line comment
+[if IE 9]>IE9-specific content<![endif]""")
+
+print(a.difference(b))

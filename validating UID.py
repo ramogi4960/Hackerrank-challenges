@@ -15,8 +15,22 @@ for i in range(int(input())):
         uppercase_letters, digits = [item for item in x if item.isupper()], [item for item in x if item.isdigit()]
         # checking if at least 2 uppercase and at least 3 digits
         if len(uppercase_letters) >= 2 and len(digits) >= 3:
-            final_print_list.append("VALID")
+            final_print_list.append("Valid")
     else:
-        final_print_list.append("INVALID")
+        final_print_list.append("Invalid")
 
 print(*final_print_list, sep="\n")
+
+# another way below
+
+# uids = []
+# for i in range(int(input())):
+#     uids.append(input())
+#
+# for uid in uids:
+#     valid = len([x for x in uid if x.isupper()]) > 1
+#     valid = valid and len([x for x in uid if x.isdigit()]) > 2
+#     valid = valid and all([x.isalnum() for x in uid])
+#     valid = valid and len(set([x for x in uid])) == 10
+#     valid = valid and len(uid) == 10
+#     print('Valid' if valid else 'Invalid')
