@@ -1,27 +1,17 @@
-from html.parser import HTMLParser
+"""
+4253625879615786
+4424424424442444
+5122-2368-7954-3214
+"""
+"""
+6
+4123456789123456
+5123-4567-8912-3456
+61234-567-8912-3456
+4123356789123456
+5133-3367-8912-3456
+5123 - 3567 - 8912 - 3456
+"""
 
-
-class Kevin(HTMLParser):
-    def handle_starttag(self, tag, attr):
-        print("The start tag is:", tag)
-        for item in attr:
-            print("->", item[0], ">", item[1])
-
-    def handle_endtag(self, tag):
-        print(("The end tag is: ", tag))
-
-    def handle_startendtag(self, tag, attr):
-        print("")
-
-
-file = Kevin()
-file.feed("<html lang='en' dir='ltr'><head><meta charset='utf-8'><title></title></head><body></body></html>")
-
-# file.feed("<html>"
-#           "<head>"
-#           "<title>"
-#           "</title>"
-#           "</head>"
-#           "<body colo>"
-#           "</body>"
-#           "</html>")
+r = "444444"
+print(all("4"*2 == r[i:i+2] for i in range(len(r[:-1]))))
