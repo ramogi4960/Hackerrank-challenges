@@ -1,18 +1,4 @@
 import re
-def fun(match):
-    thing = 
-
-"""
-1
-x&& &&& && && x || | ||\|| x
-"""
-
-"""
-1
-c $&1|| || && && &|&&| & | | &&c
-"""
-
-"""
-1
-n && && && && && &&n
-"""
+func = lambda x: "and" if x.group(0) == "&&" else "or"
+pattern = re.compile(r'(?<=\s)(?:&&|\|\|)(?=\s)')
+print(*[re.sub(pattern, func, input()) for _ in range(int(input()))], sep="\n")
