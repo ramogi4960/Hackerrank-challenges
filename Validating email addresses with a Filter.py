@@ -1,5 +1,5 @@
 # this is a way of validating email addresses.
-# first we ake in an email as an input. We need to split the email using a re.split() function
+# first we take in an email as an input. We need to split the email using a re.split() function
 # after splitting, we can place the username, extension and website name as separate variables
 # we can then check if each item is correctly entered
 import re
