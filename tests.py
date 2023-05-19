@@ -1,22 +1,15 @@
-import re
+def square(fun):
+    def inner(num):
+        print("this is the result")
+        print(fun(num))
 
-"""
-1
-x&& &&& && && x || | ||\|| x
-"""
+    return inner
 
-"""
-1
-c $&1|| || && && &|&&| & | | &&c
-"""
 
-"""
-1
-n && && && && && &&n
-"""
-text = """
-hello hello
-you are it
-bye bye
-"""
-print(re.findall(r"(\w+) \1", text))
+@square
+def outer(s):
+    print(s ** 2)
+
+
+x = square(outer)
+x(5)
