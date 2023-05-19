@@ -10,3 +10,8 @@ import numpy
 
 
 print(numpy.reshape(numpy.array(list(map(int, input().split()))), (3, 3)))
+
+"""
+The shape of an array is a tuple with the number of rows and collumns. (rows, collumns)
+If there is only 1 row, it returns (collumns, )
+"""

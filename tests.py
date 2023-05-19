@@ -1,15 +1,15 @@
-def square(fun):
-    def inner(num):
-        print("this is the result")
-        print(fun(num))
+import numpy
+list1, N_and_M = [], list(map(int, input().split()))
+for i in range(N_and_M[0]):
+    arr = list(map(int, input().split()))
+    list1.append(arr)
 
-    return inner
+my_array = numpy.array(list1)
+print(numpy.transpose(my_array), my_array.flatten(), sep="\n")
 
-
-@square
-def outer(s):
-    print(s ** 2)
-
-
-x = square(outer)
-x(5)
+"""
+sample input
+2 2
+1 2
+3 4
+"""
