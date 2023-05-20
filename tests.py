@@ -1,15 +1,15 @@
-import numpy
-list1, N_and_M = [], list(map(int, input().split()))
-for i in range(N_and_M[0]):
-    arr = list(map(int, input().split()))
-    list1.append(arr)
+# decorators take functions as arguments and use them inside itself
 
-my_array = numpy.array(list1)
-print(numpy.transpose(my_array), my_array.flatten(), sep="\n")
+def caps(function):
+    def ups():
+        function("Kevin")
 
-"""
-sample input
-2 2
-1 2
-3 4
-"""
+    return ups
+
+
+def naming(k):
+    print(k.upper())
+
+
+f = caps(naming)
+f()
