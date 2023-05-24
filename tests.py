@@ -1,4 +1,3 @@
-import operator as op
-
-people = [input().split() for i in range(int(input()))]
-print(sorted(people, key=op.itemgetter(2)))
+import re
+alt = r"([0-9]{1})[0-9]{1}\1"
+print(re.findall(alt, input()))
