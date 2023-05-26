@@ -1,3 +1,4 @@
-import re
-pattern = r"(b)?o\1"
-print(str(bool(re.match(pattern, input()))).lower())
+l = [1, 2]
+f = ["a", "b"]
+for i in range(len(l)):
+    print(l[i], f[i], sep=",")
