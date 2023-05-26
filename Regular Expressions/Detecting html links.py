@@ -43,10 +43,18 @@ Test case
 </center>
 """
 
-pattern = r"(?<=href=\")(.*?)(?=\")(.*?)(?<=>)(.*?)(?=</a>)"
-f = [input() for _ in range(int(input()))]
-for item in f:
+
+html_lines = [input() for _ in range(int(input()))]
+pattern = r"(?<=href=\")(.*?)(?=\")(.*?)(?<=>)(\w*?)(?=</)"
+for item in html_lines:
     if re.search(pattern, item):
-        print(re.search(pattern, item).group(1) + "," + re.search(pattern, item).group(2))
+        for i in re.findall(pattern, item):
+            print(i[0], i[-1], sep=",")
 
-
+# import re
+# for i in range(int(input().strip())):
+#     data = input().strip()
+#     matches = re.findall(r'[^<]*<a href="([^"]+)".*?>(?:[^<]<\w+>)*([^<]*?)(?:<\/\w+>)*<\/a>', data)
+#     if matches:
+#         for m in matches:
+#             print("{0},{1}".format(m[0].strip(), m[1].strip()))
