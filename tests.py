@@ -1,4 +1,4 @@
-l = [1, 2]
-f = ["a", "b"]
-for i in range(len(l)):
-    print(l[i], f[i], sep=",")
+from functools import reduce
+l = [2, 4, 9]
+t = list(reduce(lambda x, y: x*y, l))
+print(t)
