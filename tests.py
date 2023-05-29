@@ -1,2 +1,2 @@
-
-print(7+8+6+8+7+9+6+9+8+10)
+import math
+print(math.lcm(10, 20, 30, 15))
