@@ -1,19 +1,22 @@
 import math
-from itertools import combinations, combinations_with_replacement
-N, K, = map(int, input().split())
-number_list = list(map(int, input().split()))
-yes, no = [], {-1, }
-for i in range(1, K+1):
-    for item in list(combinations(number_list, i)):
-        if math.prod(item) == N:
-            yes.append(item)
-        else:
-            no.add(-1)
+"""
+231000000 8
+2 3 5 7 11 13 17 19
+Expected Output
+1 2 4 8 16 32 64 192 960 4800 24000 120000 600000 3000000 21000000 231000000
 
-if not yes:
-    print(*no)
-else:
-    p = [1, ]
-    for i in yes[0]:
-        p.append(i * p[-1])
-    print(*p, sep=" ")
+273000000 8
+2 3 5 7 11 13 17 19
+Expected Output
+1 2 4 8 16 32 64 192 960 4800 24000 120000 600000 3000000 21000000 273000000
+
+399000000 8
+2 3 5 7 11 13 17 19
+Expected Output
+1 2 4 8 16 32 64 192 960 4800 24000 120000 600000 3000000 21000000 399000000
+"""
+
+N, K = map(int, input().split())
+set_A = sorted(list(map(int, input().split())))
+yes, no = [1, ], {-1, }
+while yes[-1] != N:
