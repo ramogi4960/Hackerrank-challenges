@@ -1,4 +1,4 @@
-# in this task, we are supposed to determin whether a piece o input is written in either C, Java or Python
+# in this task, we are supposed to determine whether a piece o input is written in either C, Java or Python
 import re
 import sys
 java = re.compile(r"import\sjava|System\.out\.println|System\.exit")
