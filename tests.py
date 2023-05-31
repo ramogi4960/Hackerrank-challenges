@@ -1,1 +1,3 @@
-print(bool(-90<float(-20)))
+import re
+t = input()
+print(re.search())
