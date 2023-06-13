@@ -1,6 +1,6 @@
 import re
 
-# given a string S, return the "reversed" verion of S such that all non-letters remain in the ssame position
+# given a string S, return the "reversed" version of S such that all non-letters remain in the same position
 # while the letters are reversed
 """
 input: ab-cd
