@@ -31,11 +31,7 @@ class Solution:
         return root
 
     def getHeight(self, root):
-        if not root:
-            return 0
-        else:
-            a = max(self.getHeight(root.left), self.getHeight(root.right))
-            return a
+
 
 
 T = int(input())
