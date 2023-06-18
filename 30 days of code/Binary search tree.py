@@ -31,8 +31,20 @@ class Solution:
         return root
 
     def getHeight(self, root):
-
-
+        if not root:
+            return 0
+        q, height = [root, ], 0
+        while q:
+            node_count = len(q)
+            while node_count > 0:
+                node = q.pop(0)
+                if node.left:
+                    q.append(node.left)
+                if node.right:
+                    q.append(node.right)
+                node_count -= 1
+            height += 1
+        return height - 1
 
 T = int(input())
 myTree = Solution()
