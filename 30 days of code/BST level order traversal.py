@@ -1,4 +1,14 @@
 import sys
+"""
+Test cases
+6
+3
+5
+4
+7
+2
+1
+"""
 
 class Node:
     def __init__(self, data):
@@ -18,7 +28,20 @@ class Solution:
         return root
 
     def levelOrder(self, root):
-        #Write your code here
+        if not root:
+            pass
+        else:
+            l = [root, ]
+            final = [root.data, ]
+            while l:
+                a = l.pop(0)
+                if a.left:
+                    l.append(a.left)
+                    final.append(a.left.data)
+                if a.right:
+                    l.append(a.right)
+                    final.append(a.right.data)
+            print(*final, sep=" ")
 
 T = int(input())
 myTree = Solution()
