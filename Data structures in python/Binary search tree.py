@@ -65,9 +65,28 @@ class BST:
         for item in final:
             print(item.data, end=" ")
 
+    def get_height(self, root):
+        height = 0
+        if not root:
+            return height
+        else:
+            a, l = [root, ], []
+            while a:
+                for item in a:
+                    if item.left:
+                        l.append(item.left)
+                    if item.right:
+                        l.append(item.right)
+                a = [item for item in l]
+                l.clear()
+                height += 1
+            return height - 1
+
+
 my_bst = BST()
 root = None
 for _ in range(int(input())):
     root = my_bst.insert(root, int(input()))
 
 my_bst.print_bst(root)
+print(my_bst.get_height(root))
