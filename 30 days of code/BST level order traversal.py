@@ -1,4 +1,5 @@
 import sys
+
 """
 Test cases
 6
@@ -10,10 +11,13 @@ Test cases
 1
 """
 
+
 class Node:
     def __init__(self, data):
         self.right = self.left = None
         self.data = data
+
+
 class Solution:
     def insert(self, root, data):
         if root is None:
@@ -28,20 +32,24 @@ class Solution:
         return root
 
     def levelOrder(self, root):
+        final = []
         if not root:
-            pass
+            print("The BST is empty")
         else:
-            l = [root, ]
-            final = [root.data, ]
-            while l:
-                a = l.pop(0)
-                if a.left:
-                    l.append(a.left)
-                    final.append(a.left.data)
-                if a.right:
-                    l.append(a.right)
-                    final.append(a.right.data)
-            print(*final, sep=" ")
+            a, l = [root, ], []
+            while a:
+                for item in a:
+                    final.append(item)
+                    if item.left:
+                        l.append(item.left)
+                    if item.right:
+                        l.append(item.right)
+                a = [item for item in l]
+                l.clear()
+
+        for item in final:
+            print(item.data, end=" ")
+
 
 T = int(input())
 myTree = Solution()
