@@ -1,2 +1,7 @@
-a = [3, ] * 8
-print(a)
+class P:
+    def printing(self):
+        return "Hello world"
+
+
+x = P().printing()
+print(x)
